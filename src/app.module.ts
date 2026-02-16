@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersModule } from './users/users.module';
+// import { UsersModule } from './users/users.module';
 import { ItemsModule } from './items/items.module';
 import { CategoriesService } from './categories/categories.service';
 import { CategoriesController } from './categories/categories.controller';
@@ -10,13 +10,16 @@ import { ConfigModule } from '@nestjs/config';
 import { VendorsModule } from './vendors/vendors.module';
 import { PaymentmethodModule } from './paymentmethod/paymentmethod.module';
 import { ProductsModule } from './products/products.module';
+import { ProductsService } from './products/products.service';
+import { ProductsController } from './products/products.controller';
 import { OrdersModule } from './orders/orders.module';
 import { OrderitemsModule } from './orderitems/orderitems.module';
 import { LogisticpartnersModule } from './logisticpartners/logisticpartners.module';
-import { TransationModule } from './transation/transation.module';
+import { PrismaModule } from '../prisma/prisma.module';
+
 import { TransactionModule } from './transaction/transaction.module';
 
-
+//usersModule
 @Module({
   imports: [
      ConfigModule.forRoot({
@@ -24,8 +27,8 @@ import { TransactionModule } from './transaction/transaction.module';
       envFilePath: '.env', // optional (default is .env)
     }),
     
-    UsersModule, ItemsModule, CategoriesModule, VendorsModule, PaymentmethodModule, ProductsModule, OrdersModule, OrderitemsModule, LogisticpartnersModule, TransationModule, TransactionModule],
-  controllers: [AppController, CategoriesController],
-  providers: [AppService, CategoriesService],
+      ItemsModule, CategoriesModule, PrismaModule, VendorsModule, PaymentmethodModule, ProductsModule, OrdersModule, OrderitemsModule, LogisticpartnersModule, TransactionModule],
+  controllers: [AppController, CategoriesController, ProductsController],
+  providers: [AppService, CategoriesService, ProductsService],
 })
-export class AppModule {}
+export class AppModule {} 

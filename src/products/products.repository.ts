@@ -1,8 +1,8 @@
-import { Product } from './../../generated/prisma/client';
+import { Product } from '@prisma/client';
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 // import {AuthController} from '../auth/auth.controller';
-// import { PrismaClient } from '@prisma/client';
+// import { PrismaClient } from '@prisma/client'; 
 // import * as bcrypt from 'bcryptjs';
 import {UpdateProductDto} from './dto/update-product';
 

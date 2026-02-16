@@ -1,3 +1,4 @@
+import { Product } from './../../generated/prisma/client';
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
 // import {AuthController} from '../auth/auth.controller';
